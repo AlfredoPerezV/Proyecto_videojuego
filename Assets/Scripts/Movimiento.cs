@@ -26,6 +26,11 @@ public class Movimiento : MonoBehaviour
             rb.AddForce(0f, 4f, 0f, ForceMode.Impulse);
             isGraunded = false;
         }
+
+        if (transform.position.y < 5)
+        {
+            transform.position = new Vector3(0.75f, 41.26f, -4.39f);
+        }
        
         
     }
@@ -38,9 +43,9 @@ public class Movimiento : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Respawn")
+        if (collision.collider.tag == "Respawn")
         {
-            transform.position = new Vector3(0.75f, 34.18f, -4.39f);
+            transform.position = new Vector3(0.75f, 41.26f, -4.39f);
         }
     }
 }
